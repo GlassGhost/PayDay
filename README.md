@@ -1,20 +1,31 @@
-# Github Pages Template
+#The Never Ending PayDay
+______________________________________________________________________
 
-______________
+![](http://i.imgur.com/5wvH46g.jpg)
 
-Code@[github.com/MinJSLib/gh-template](https://github.com/MinJSLib/gh-template)  
-Demo@[minjslib.github.io/gh-template](http://minjslib.github.io/gh-template/)
+If you ever feel like the picture above or know someone who might, the problem is to **"know precisely how much money to use at a daily rate, while still leaving money for ALL the bills at the end of the month."** [The Spreadsheet](https://goo.gl/k6HAv4) in the picture below, lets one enter in their Income and Bills Each for each month and calculates everything so that you can, **"know precisely how much money to use at a daily rate, while still leaving money for ALL the bills at the end of the month."**:
 
-This is a template to allow you to do almost anything, including on your own server. Just use [NodeJS](http://nodejs.org/) and the included `gh-template-node.js` file
+[![The Spreadsheet](Monthly%20to%20Daily%20Billing%20scheme.svg)](https://goo.gl/k6HAv4)
 
-The built in Github markdown displayer won't allow stuff like:
+Click the [The Spreadsheet](https://goo.gl/k6HAv4), then click file->"make a copy" will save a copy to your google drive profile, on your copy you enter in your list of monthly bills; when you're done you get a **MAGIC** number your "daily spending rate". To use the **MAGIC**, just make certain your "billing account" statement looks like your "billing spreadsheet" mixed with scheduled daily transfers of the magic number into your spending account(talk to your bank about how to do this), And you're done.
 
-* embed mathjax code like this:
-$$$e^x =\lim_{n\to\infty}\left(1+\frac{x}{n}\right)^{n} = \sum_{n=0}^{\infty} \left( \frac{x^n}{n!} \right) = \frac{x^n}{0!} + \frac{x^n}{1!} + \frac{x^n}{2!} + \frac{x^n}{3!} + \text{⋅ ⋅ ⋅}$$$
-* embed youtube videos like this:
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src=
-"//www.youtube.com/embed/vtLLdtBQBoI?list=PLjgrsP5Vg40lWLyr1whakzuDsmGW0el0y&loop=1&autoplay=1"
-frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-* [SVG Parameters](http://www.w3.org/TR/SVGParamPrimer) code like this:
-<object type="image/svg+xml" data="gh-template/map.svg?x=320&y=290"></object>
+####Then hopefully ALL OF THE MONTH Will Be Smooth Sailing
+![Alt text](smooth.jpg)
 
+### **CAUTION**
+[The Spreadsheet](https://goo.gl/k6HAv4) only calculates for the bills you enter, because of this I would also suggest you add a "miscellaneous bill" entry in the event of unforseen expenses.  
+At the end of the month a final withdraw of whatever is unspent of the "miscellaneous bill" into your savings.
+
+####Also 
+To speed up writing your new sheet when starting a new month, you can to duplicate your previous month bills by right clicking the "template sheet" &  selecting "duplicate sheet" then right click and rename the duplicate sheet to the name of the new month, and to change the date in the `F4` cell.
+
+______________________________________________________________________
+##How it works
+Through the Magic of Spreadsheets  
+
+The total bills is calculated by adding them all up with: `=sum(B5:B)`
+
+The spending money is calculated by subtracting total bills from the income: `=B2-B3`
+
+The ENTIRE Daily column is controlled by the content of the 1st daily cell, it simply iterates over the entire column dividing the cell to its right by the number of days in the month:  
+`=IFERROR(ARRAYFORMULA(B2:B/day(eomonth(F4,0))),"")`

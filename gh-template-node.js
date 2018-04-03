@@ -1,4 +1,5 @@
-//you may have to install nodejs & run 'npm install http-server' to get this to run
+//To get this to run, you may have to install nodejs & run:
+//cd /path/to/billing && npm install --save http-server
 var	httpServer = require('http-server');
 
 var server = httpServer.createServer({});

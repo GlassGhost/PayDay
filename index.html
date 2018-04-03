@@ -1,9 +1,9 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><!--_________________--><title>
-MinJSLib.github.io/gh-template
+The Never Ending PayDay
 </title><meta name="description" content="Github Pages Template using client-side JS markdown for styling  plaintext .md files">
 <!--___________________________________________________________________Styles-->
-<link rel="stylesheet" href="gh-template/jquery-ui-1.11.2.custom/jquery-ui.css" type="text/css" />
-<link rel="stylesheet" href="gh-template/jquery-ui-1.11.2.custom/jquery-ui.theme.css" type="text/css" />
+<link rel="stylesheet" href="gh-template/jquery-ui-1.11.4.custom/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="gh-template/jquery-ui-1.11.4.custom/jquery-ui.theme.css" type="text/css" />
 <style type="text/css">/* <![CDATA[ Custom Styling*/
 	html, body {	height:100%; width:100%; margin:0; border:0; padding:0;
 					vertical-align:top;
@@ -43,7 +43,7 @@ MinJSLib.github.io/gh-template
 
 		//Setup Manuscript Editor
 		var Editor; Editor = ace.edit("Manuscript");
-		Editor.setTheme("ace/theme/twilight");
+		Editor.setTheme("ace/theme/textmate");
 		Editor.getSession().setMode("ace/mode/markdown");
 		//startup showdownjs to reset Article contents on Manuscript changes
 		var converter = new Showdown.converter({ extensions: ['table', 'mathjax'] });
